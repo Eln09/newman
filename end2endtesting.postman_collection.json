@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "fae84acc-f5fb-48a5-b72d-e6f880c35917",
+		"name": "end2endtesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28964312"
+	},
+	"item": [
+		{
+			"name": "validate pet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/pet/{{petid}}"
+			},
+			"response": []
+		},
+		{
+			"name": "new pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{petname}},\r\n  \"category\": {\r\n    \"id\": 100,\r\n    \"name\": \"puppy\"\r\n  },\r\n  \"name\": \"Dalmata\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 100,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "update pet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{petid}},\r\n  \"category\": {\r\n    \"id\": 100,\r\n    \"name\": \"{{petname}}\"\r\n  },\r\n  \"name\": \"golden\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 100,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "petid",
+			"value": "100"
+		}
+	]
+}
